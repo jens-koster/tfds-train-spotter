@@ -4,13 +4,15 @@ A streaming data lab aiming to provide real-time info on the Øresund trains bet
 # Plan
 Discovery and development of the Øresund train spotter.
 
-Current assumption is that we take data from the TrafikLab API for Øresund trains.
-* **TrafikLab->Kafka** - We'll build a custom tfds service for this
+Current assumption is that we take data from the TrafikLab API for Øresund trains. It's free to register and get API keys but, and Skånetrafiken provides real-time data, let's hope the Øresund trains are in there as well, they've always been a bit special.
+
+Stack:
+* **TrafikLab->Kafka** - I'll build a custom tfds service for this
 * **Kafka->Spark** - For analytics. Using Spark Structured Streaming
-* **Kafka->Apache Druid** - Using Druid Kafka Indexing Service
+* **Kafka->Apache Druid** - For use in real-time dashnoard. Using Druid Kafka Indexing Service
 * **Apache Druid->Apache Superset** - Superset has native Druid connectivity
 
-Maybe: **Kafka->Materialise** - Materialize has native support for Kafka
+Maybe: **Kafka->Materialise** - Materialize is apparently hot stuff and has native support for Kafka.
 
 Project: https://github.com/users/jens-koster/projects/3
 
